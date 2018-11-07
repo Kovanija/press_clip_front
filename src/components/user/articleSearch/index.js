@@ -143,9 +143,12 @@ class ArticlesSearch extends Component {
                 return (
                   <GridColumn computer={4}>
                     <div style={{ marginTop: '50px' }}>
-                      <a href={article.original_src} style={{ fontSize: '18px' }} target="_blank">Originalni Pdf</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/source/` + article.original_src} style={{ fontSize: '18px' }} target="_blank">Originalni Pdf</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/modified/` + article.modified_src} style={{ fontSize: '18px' }} target="_blank">Modifikovani Pdf</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/output/` + article.single_page_src} style={{ fontSize: '18px' }} target="_blank">Izdvojena stranica</a><br />
+                      {/* <a href={article.original_src} style={{ fontSize: '18px' }} target="_blank">Originalni Pdf</a><br />
                       <a href={article.modified_src} style={{ fontSize: '18px' }} target="_blank">Modifikovani Pdf</a><br />
-                      <a href={article.single_page_src} style={{ fontSize: '18px' }} target="_blank">Izdvojena stranica</a><br />
+                      <a href={article.single_page_src} style={{ fontSize: '18px' }} target="_blank">Izdvojena stranica</a><br /> */}
                       <div>Izdavac: {article.media_slug}</div>
                       <div>{article.updated_at}</div>
                       <TextArea cols="35" name={article.text} value={article.text === null ? '' : article.text} /><br />
@@ -217,9 +220,9 @@ class ArticlesSearch extends Component {
                 return (
                   <GridColumn computer={4}>
                     <div style={{ marginTop: '50px' }}>
-                      <a href={item.original_src} style={{ fontSize: '18px' }} target="_blank">Originalni Pdf</a><br />
-                      <a href={item.modified_src} style={{ fontSize: '18px' }} target="_blank">Modifikovani Pdf</a><br />
-                      <a href={item.single_page_src} style={{ fontSize: '18px' }} target="_blank">Izdvojena stranica</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/source/` + item.original_src} style={{ fontSize: '18px' }} target="_blank">Originalni Pdf</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/modified/` + item.modified_src} style={{ fontSize: '18px' }} target="_blank">Modifikovani Pdf</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/output/` + item.single_page_src} style={{ fontSize: '18px' }} target="_blank">Izdvojena stranica</a><br />
                       <div>Izdavac: {item.media_slug}</div>
                       <div>{item.updated_at}</div>
                       <TextArea cols="35" name={item.text} value={item.text === null ? '' : item.text} /><br />
@@ -242,7 +245,7 @@ class ArticlesSearch extends Component {
         <PressPublisher /><br />
         <Button color='facebook' content='Pošalji upit' onClick={this.handleSubmit} />
         {this.state.loader === true ? <Loader size='large' active inline='centered' /> : null}
-        
+
         <div>
           {
             clanciStampani

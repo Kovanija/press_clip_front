@@ -288,9 +288,9 @@ class ArticlesSearchOperater extends Component {
                 return (
                   <GridColumn computer={4}>
                     <div style={{ marginTop: '50px' }}>
-                      <a href={article.original_src} style={{ fontSize: '18px' }} target="_blank">Originalni Pdf</a><br />
-                      <a href={article.modified_src} style={{ fontSize: '18px' }} target="_blank">Modifikovani Pdf</a><br />
-                      <a href={article.single_page_src} style={{ fontSize: '18px' }} target="_blank">Izdvojena stranica</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/source/` + article.original_src} style={{ fontSize: '18px' }} target="_blank">Originalni Pdf</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/modified/` + article.modified_src} style={{ fontSize: '18px' }} target="_blank">Modifikovani Pdf</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/output/` + article.single_page_src} style={{ fontSize: '18px' }} target="_blank">Izdvojena stranica</a><br />
                       <div>Izdavac: {article.media_slug}{article.returned === 1 ? <span style={{ marginLeft: '10px', color: 'red' }}>Vracen!</span> : null}</div>
                       <div>{article.updated_at}</div>
                       <TextArea cols="35" name={article.text} value={article.text === null ? '' : article.text} /><br />
@@ -372,9 +372,9 @@ class ArticlesSearchOperater extends Component {
                 return (
                   <GridColumn computer={4}>
                     <div style={{ marginTop: '50px' }}>
-                      <a href={article.original_src} style={{ fontSize: '18px' }} target="_blank">Originalni Pdf</a><br />
-                      <a href={article.modified_src} style={{ fontSize: '18px' }} target="_blank">Modifikovani Pdf</a><br />
-                      <a href={article.single_page_src} style={{ fontSize: '18px' }} target="_blank">Izdvojena stranica</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/source/` + article.original_src} style={{ fontSize: '18px' }} target="_blank">Originalni Pdf</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/modified/` + article.modified_src} style={{ fontSize: '18px' }} target="_blank">Modifikovani Pdf</a><br />
+                      <a href={`http://192.169.189.202/gs/public/javascripts/output/` + article.single_page_src} style={{ fontSize: '18px' }} target="_blank">Izdvojena stranica</a><br />
                       <div>Izdavac: {article.media_slug}{article.returned === 1 ? <span style={{ marginLeft: '10px', color: 'red' }}>Vracen!</span> : null}</div>
                       <div>{article.updated_at}</div>
                       <TextArea cols="35" name={article.text} value={article.text === null ? '' : article.text} /><br />
